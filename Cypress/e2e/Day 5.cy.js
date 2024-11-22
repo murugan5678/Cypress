@@ -1,4 +1,4 @@
-
+import 'cypress-xpath';
 describe('Day2Automation', ()=>{
     //dropdown single select positive
     it('Dropdown single +tive', ()=>{

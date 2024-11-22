@@ -14,11 +14,11 @@
   "author": "murugan",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.8.1",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
+    "cypress": "^13.16.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",

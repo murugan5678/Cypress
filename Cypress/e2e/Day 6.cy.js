@@ -1,3 +1,4 @@
+import 'cypress-xpath';
 describe("Day4Automation", ()=>{
     //Alert
         it('Alert', ()=>{
