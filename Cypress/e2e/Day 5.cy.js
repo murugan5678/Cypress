@@ -7,13 +7,7 @@ describe('Day2Automation', ()=>{
        cy.get('._2iLD__').click()
         cy.xpath('(//select[@class="Gn+jFg"])[1]').select('₹15000')
     })
-    //dropdowwn single select negative
-    // it('Dropdown single -tive', ()=>{
-    //     cy.visit("http://www.flipkart.com")
-    //    cy.get('.Pke_EE').type('Iphone')
-    //    cy.get('._2iLD__').click()
-    //     cy.xpath('(//select[@class="Gn+jFg"])[1]').select(1).should('have.value','₹20000')
-    // })
+ 
    //dropdown multiple select positive
     it('Dropdown Multiselect', ()=>{
         cy.visit("https://www.leafground.com/select.xhtml")
@@ -49,6 +43,20 @@ it('multiple checkbox', ()=>{
     cy.visit("http://www.automationpractice.pl/index.php?id_category=8&controller=category#")     
     cy.get('span input').check(['9', '10'])
 })
-
+it('dropdown without select', ()=>{
+    cy.visit('https://www.dummyticket.com/dummy-ticket-for-visa-application/')
+    
+    cy.get("#select2-billing_country-container").click()
+    cy.get("input.select2-search__field").type('India').type('{enter}')
+    
+    })
+    
+    it('dropdown without select', ()=>{
+        cy.visit('https://www.dummyticket.com/dummy-ticket-for-visa-application/')
+        
+        cy.get("#select2-billing_country-container").click()
+        cy.get("input.select2-search__field").type('India').type('{enter}')
+        
+        })
 
 })
