@@ -84,10 +84,11 @@ describe('Inland Marine', ()=> {
 
      //Agreements
      //Agency Commission field
-     cy.get("#newRate").type('10')
+     cy.get("#newRate").clear().type('10')
      //Select Agreements
-     cy.get('.unq-dynamic-grid__checkbox > input').click();
-     cy.wait(10000);
+     cy.wait(2000);
+     //cy.get('.unq-dynamic-grid__checkbox > input').click();
+     cy.wait(1000);
      cy.xpath("(//button[@id='btnSave'])[1]").click();
 
     });
