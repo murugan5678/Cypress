@@ -1,3 +1,6 @@
+// cypress/support/commands.js or cypress/support/e2e.js
+import 'cypress-xpath';
+
 describe('Day7hooks', ()=>{
 
     before('title check', ()=>{

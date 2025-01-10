@@ -67,7 +67,17 @@ describe("Day4Automation", ()=>{
         cy.title().should('eq',"Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
             cy.go(1)
             cy.reload();
+            
     })
+    // it('browser navigation forward', ()=>{
+    //     cy.visit("https://www.flipkart.com/")
+    //     cy.xpath("//a[@aria-label='Mobiles']").click()
+    //     cy.go('back')
+    //     cy.title().should('eq',"Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
+    //         cy.go(1)
+    //         cy.reload();
+           
+    // })
     //input boxes
     it('textbox', ()=>{
         cy.visit('https://www.leafground.com/input.xhtml')

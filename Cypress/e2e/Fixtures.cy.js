@@ -1,3 +1,4 @@
+import 'cypress-xpath';
 Cypress.on('uncaught:exception', (err, runnable) => {
     // Handle the exception as needed
     console.error('Uncaught Exception:', err.message);

@@ -7,9 +7,9 @@ describe('Inland Marine', ()=> {
         cy.get('#password').type('Muru!@12345678') //password
         cy.get("input[value='Login']").click() //login button
 
-    cy.wait(10000);
+    cy.wait(20000);
 
-    cy.xpath("(//span[normalize-space()='Quote Options'])[1]").click().wait(5000);
+    cy.xpath("(//span[normalize-space()='Quote Options'])[1]").click();
 
     cy.get('.unq-dynamic-grid__checkbox > input').click();
      cy.wait(5000);

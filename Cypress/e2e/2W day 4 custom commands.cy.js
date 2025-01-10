@@ -1,3 +1,4 @@
+import 'cypress-xpath';
 describe('Day7Automation', function(){
 
     // execute before all the code-- login the page
@@ -16,7 +17,7 @@ describe('Day7Automation', function(){
            cy.log(new Date().toLocaleTimeString())
            })
            //after each code block it execute
-           afterEach('screenshot',function(){
+     afterEach('screenshot',function(){
                 cy.screenshot('test-screenshot',{capture: 'fullPage' });
                })  
                
@@ -36,7 +37,7 @@ describe('Day7Automation', function(){
         cy.visit("https://demo.opencart.com/index.php?route=common/home&language=en-gb")
         cy.xpath("//a[normalize-space()='iPhone']").click()
         cy.get('#input-quantity').type(4)
-        cy.get("#review-tab").click()
+        cy.xpath("(//a[normalize-space()='Reviews (0)'])[1]", { timeout: 1000 }).click()
     })
     
     
