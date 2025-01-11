@@ -10,8 +10,9 @@ describe('Inland Marine', ()=> {
     cy.wait(20000);
 
     cy.xpath("(//span[normalize-space()='Quote Options'])[1]").click();
-
+    cy.wait(5000);
     cy.get('.unq-dynamic-grid__checkbox > input').click();
+    
      cy.wait(5000);
     cy.get('#btnAcceptApp').click();
     cy.wait(25000);

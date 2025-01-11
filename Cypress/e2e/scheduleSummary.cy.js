@@ -26,6 +26,7 @@ describe('Inland Marine', ()=> {
         cy.get('#form-group-covpropInclExclArticle > [role="radiogroup"] > :nth-child(2) > .control-label').click();
         cy.get('#covpropLimit1Article').type('100');
         cy.get('#covpropDed1Article').type('100');
+        
         cy.get('#covpropDedType1Article > .ui-select-match > .btn-default > .ui-select-match-text').click();
         cy.get('#ui-select-choices-row-14-1 > .ui-select-choices-row-inner').click();
         cy.get('#covpropDedType2Article > .ui-select-match > .btn-default > .ui-select-match-text').click();
@@ -34,6 +35,7 @@ describe('Inland Marine', ()=> {
         cy.get('#ui-select-choices-row-16-3 > .ui-select-choices-row-inner').click();
         cy.get('#btnAddScheduleEquipment').click();
         cy.wait(500);
+
       cy.xpath("//button[@id='btnSave']").click();
       cy.xpath("//button[@id='btnNext']").click();
 

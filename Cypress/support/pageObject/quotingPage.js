@@ -14,16 +14,16 @@ class QuotingPage {
       cy.get('#ui-select-choices-row-5-2 > .ui-select-choices-row-inner').click();
     }
   
-    enterPremium() {
-      cy.xpath("(//input[@id='poMinimumEarnedPremiumDisplay'])[1]").clear({ force: true }).type('2');
+    enterPremium(premium) {
+      cy.xpath("(//input[@id='poMinimumEarnedPremiumDisplay'])[1]").clear({ force: true }).type(premium);
     }
   
-    selectAgency() {
+    selectAgency(agency) {
       cy.get('#btnOpenAgencyGridModal').click();
       cy.wait(8000);
       cy.get('#dropSearchTextTypeAgency > .ui-select-match > .btn-default > .caret').click({ force: true });
       cy.get('#ui-select-choices-row-12-1 > .ui-select-choices-row-inner').click({ force: true });
-      cy.get('#searchAgency').type('8');
+      cy.get('#searchAgency').type(agency);
       cy.get('#fgFilterBarBtnLeftBtnAgency').click({ force: true });
       cy.get('.jsgrid-row > .jsgrid-control-field > .pull-right').click();
       cy.get('#btnSearchAgency').click();

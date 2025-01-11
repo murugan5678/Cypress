@@ -27,12 +27,12 @@ describe('Inland Marine', () => {
 
     quotingPage.fillMandatoryFields();
     quotingPage.selectUnderwriter();
-    quotingPage.enterPremium();
-    quotingPage.selectAgency();
+    quotingPage.enterPremium(userCredentials.premium);
+    quotingPage.selectAgency(userCredentials.agency);
     cy.wait(2000);
 
     //Risk location page
-    locationPage.addLocation();
+    locationPage.addLocation(userCredentials.address);
     //Agreements page
     agreementsPage.agencyCommision(userCredentials.agencyvalue);
     agreementsPage.agreementsSelect();
@@ -40,8 +40,8 @@ describe('Inland Marine', () => {
     schedulePage.fillScheduleDetails(userCredentials.description, userCredentials.itemnumber, userCredentials.insvalamount, userCredentials.sernum, userCredentials.sedescription);
     schedulePage.addSchedule();
 
-    cy.xpath("//button[@id='btnSave']").click();
-    cy.xpath("//button[@id='btnNext']").click();
+    // cy.xpath("//button[@id='btnSave']").click();
+    // cy.xpath("//button[@id='btnNext']").click();
     cy.wait(60000);
   });
 });
