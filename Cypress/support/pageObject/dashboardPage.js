@@ -24,7 +24,7 @@ class DashboardPage {
 
       cy.xpath("(//button[@id='fgFilterBarBtnLeftBtnDashboard'])[1]").click();
       cy.get('#btnSearchDashboard').click();
-      cy.wait(5000);
+      cy.wait(6000);
     }
   }
   

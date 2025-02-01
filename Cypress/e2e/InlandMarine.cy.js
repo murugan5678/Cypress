@@ -1,41 +1,19 @@
 import 'cypress-xpath';
 describe('Inland Marine', ()=> {
-    // it('Login', ()=> {
-    //     cy.visit("https://rsum-qa-uatx.unqork.io/app/suremga#/display/applications-dashboard")
-    //     cy.get('#username').type('murugan@auxosolutions.io')
-    //     cy.get('#password').type('Muru!@12345678')
-    //     cy.get("input[value='Login']").click()
-    //     //cy.get('body').type('{enter}');
-    //     cy.window().then((win)=>{
-    //         cy.stub(win,'prompt').returns('cypress');
-    //     })
-    //     cy.get("button[aria-label='Hide Preview Bar']").click();
-    //     //cy.get("#btnRefreshModalOK2").click();
-    //     cy.wait(2000);
-    //     cy.get("#btnRefreshModalOK2").click();
-    //     cy.get("img[alt='Avatar']").trigger('mouseover');
-
-    //     cy.wait(2000);
-    //     cy.xpath("//span[normalize-space()='Change C1 User']").click({ force: true });
-    //     cy.wait(2000);
-    //     cy.get("div[id='bookSelected'] i[class='caret pull-right']").click({ force: true })
-    //     cy.wait(2000);
-    //     cy.get('#ui-select-choices-row-1-0 > .ui-select-choices-row-inner > .ng-isolate-scope > .ng-binding').click();
-    //     cy.wait(2000);
-    //     cy.get("#selectedC1User > .ui-select-match > .btn-default > .caret").click({ force: true });
-    //     cy.get("#ui-select-choices-row-2-7 > .ui-select-choices-row-inner").click();
-    //     cy.wait(2000);
-    //     cy.get('#btnCloseChangeC1User').click();
-    //     cy.wait(2000);
-    //     cy.get('#btnSearchDashboard').click({ force: true });
-    //     cy.wait(2000);
-    // })
+    before(()=>{
+      cy.task('readXlsx', {file: 'Cypress/fixtures/Book1.xlsx', sheet: "Sheet1"}).then((rows)=>{
+        rowsLength = rows.length;
+        cy.writeFile("Cypress/fixtures/xlsxData.json", {rows})
+      })
+    })
 
     it('Login', ()=> {
+      cy.fixture('xlsxData').then((data)=>{
+        for ( let i=0; i<rowsLength; i++){
         cy.viewport(1700, 1000);
         cy.visit("https://rsum-qa-uatx.unqork.io/app/quoting#/display/application-details?contract=8971233&lob=Inland&bookLocId=2100&book=1100")
-        cy.get('#username').type('murugan@auxosolutions.io') //username
-        cy.get('#password').type('Muru!@12345678') //password
+        cy.get('#username').type(data.rows[i].username) //username
+        cy.get('#password').type(data.rows[i].password) //password
         cy.get("input[value='Login']").click() //login button
 
         //To validate the mandatory fields are pre-filled values
@@ -111,6 +89,8 @@ describe('Inland Marine', ()=> {
       
      //To click the Next button in agreements page
      cy.xpath("(//button[@id='btnNext'])[1]").click();
-     
+    }
+  })
     });
+    
     })

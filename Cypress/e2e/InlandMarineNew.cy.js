@@ -39,12 +39,25 @@ describe('Inland Marine', ()=> {
         cy.get('#btnSearchDashboard').click({ force: true });
         cy.wait(2000);
 
-        cy.xpath("(//button[normalize-space()='APP12621233'])[1]").click({ force: true });
+        cy.xpath("(//button[normalize-space()='APP12621233'])[1]").click();
+        cy.wait(1000);
+        
+        cy.get('.unq-dynamic-grid__editable-cell > .ag-react-container > .unq-dynamic-grid__cell-value').click();
+                cy.get('#btnNavigateToPage').click()
+        
+        cy.window().then((win) => {
+          cy.stub(win, 'open').callsFake((url) => {
+            win.location.href = url;
+          });
+        });
+
+
         //cy.get('.unq-dynamic-grid__editable-cell > .ag-react-container > .unq-dynamic-grid__cell-value').click();
         //cy.xpath("(//button[normalize-space()='Original Application'])[1]").click();
         
-        cy.wait(1000);
-          cy.visit("https://rsum-qa-uatx.unqork.io/app/quoting#/display/application-details?contract=8971233&lob=Inland&bookLocId=2100&book=1100");
+        
+
+          //cy.visit("https://rsum-qa-uatx.unqork.io/app/quoting#/display/application-details?contract=8971233&lob=Inland&bookLocId=2100&book=1100");
             
         cy.wait(10000);
             const mandatoryFields = ['#inInsured', '#inCity', '#inState', '#inZip', '#inCountry',];

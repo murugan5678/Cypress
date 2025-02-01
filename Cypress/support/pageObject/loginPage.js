@@ -4,7 +4,7 @@ class LoginPage {
       cy.visit("https://rsum-qa-uatx.unqork.io/app/suremga#/display/applications-dashboard");
     }
   
-    fillCredentials(username, password) {
+    fillCredentials(username, password, ) {
       cy.get('#username').type(username);
       cy.get('#password').type(password);
     }

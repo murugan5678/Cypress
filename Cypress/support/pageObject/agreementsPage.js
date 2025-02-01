@@ -9,6 +9,7 @@ class agreementsPage {
      cy.xpath("(//input[@id='disableUnselectedToggle'])[1]").click().wait(10000).click();
      cy.get('.unq-dynamic-grid__checkbox > input').click();
      cy.wait(1000);
+      cy.screenshot("agreements");
      cy.xpath("(//button[@id='btnNext'])[1]").click();
     }
 }

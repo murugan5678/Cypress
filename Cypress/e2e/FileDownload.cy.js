@@ -1,12 +1,8 @@
-describe('Example to demonstrate file upload in cypress', function () {
-    before(function () {
-        cy.visit('https://the-internet.herokuapp.com/upload')
-    })
+describe('file download', function () {
 
-    it('File Upload using cypress-file-upload npm package', () => {
-        const filepath = 'images/evening.png'
-        cy.get('input[type="file"]').attachFile(filepath)
-        cy.get('#file-submit').click()
-        cy.get('#uploaded-files').contains('evening.png')
+    it('download the file', () => {
+        cy.downloadFile('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
+            'cypress/fixtures/Download', 'test.txt')
+        cy.readFile('cypress/fixtures/Download/test.txt').should('contain', 'PDF Document creation from JavaScript')    
     })
 })
