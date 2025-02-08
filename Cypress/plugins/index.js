@@ -1,5 +1,7 @@
 import 'cypress-drag-drop';
 const mysql = require('mysql');
+const xlsx = require('xlsx');
+const path = require('path');
 
 function queryTestDb(query, config) {
   const connection = mysql.createConnection(config.env.db);
@@ -31,10 +33,19 @@ function queryTestDb(query, config) {
 }
 
 module.exports = (on, config) => {
-  // Register custom task to execute SQL queries
+  // Register task for database queries
   on('task', {
-    queryDb: query => {
-      return queryTestDb(query, config);
+    queryDb: query => queryTestDb(query, config),
+  });
+
+  // Register task for reading Excel files
+  on('task', {
+    readExcel({ filePath, sheetName }) {
+      const absolutePath = path.resolve(filePath);
+      const workbook = xlsx.readFile(absolutePath);
+      const sheet = workbook.Sheets[sheetName];
+      const jsonData = xlsx.utils.sheet_to_json(sheet);
+      return jsonData; // Return the Excel data as JSON
     },
   });
 };

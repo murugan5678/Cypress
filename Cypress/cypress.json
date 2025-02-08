@@ -3,6 +3,7 @@
     "overwrite": false,
     "html": false,
     "json": true,
+    "chromeWebSecurity": false,
     "projectId": "2hhmxn",
     "env": {
         "db": {

@@ -9,7 +9,6 @@
     "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
     "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json",
     "cy:dashboard": "npx cypress run --record --key 44c48e34-f592-4c0f-9093-ee241132bcc9"
-    
   },
   "author": "murugan",
   "license": "ISC",
@@ -17,9 +16,10 @@
     "@4tw/cypress-drag-drop": "^2.2.5",
     "@shelex/cypress-allure-plugin": "^2.40.2",
     "@types/mocha": "^10.0.6",
-    "cypress": "^14.0.1",
+    "cypress": "^13.17.0",
     "cypress-downloadfile": "^1.2.4",
     "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",
     "mocha": "^10.8.2",
@@ -38,6 +38,9 @@
   "description": "",
   "dependencies": {
     "jsonpath": "^1.1.1",
-    "node-polyfill-webpack-plugin": "^4.1.0"
+    "node-polyfill-webpack-plugin": "^4.1.0",
+    "path": "^0.12.7",
+    "pg": "^8.13.1",
+    "xlsx": "^0.20.2"
   }
 }
