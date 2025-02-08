@@ -1,7 +1,7 @@
 // cypress/support/commands.js or cypress/support/e2e.js
 import 'cypress-xpath';
 
-describe('Day7hooks', ()=>{
+describe('Hooks', ()=>{
 
     before('title check', ()=>{
      cy.visit("https://testautomationpractice.blogspot.com/")

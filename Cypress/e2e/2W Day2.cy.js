@@ -1,5 +1,5 @@
 
-describe('Day6Automation', ()=>{
+describe('Handling Web ', ()=>{
   
     it('web table: verify the value presence', ()=>{
         cy.visit('https://testautomationpractice.blogspot.com/')

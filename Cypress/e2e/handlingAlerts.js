@@ -1,5 +1,5 @@
 import 'cypress-xpath';
-describe("Day4Automation", ()=>{
+describe("Alerts", ()=>{
     //Alert
         it('Alert', ()=>{
                    cy.visit('https://www.leafground.com/alert.xhtml')

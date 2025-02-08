@@ -1,5 +1,5 @@
 describe('AutomationTraining', ()=> {
-    it('AutomationTraining', ()=> {
+    it('First Testcase', ()=> {
         cy.visit("http://www.flipkart.com")
         cy.get('.Pke_EE').type('Iphone')
         cy.get('[type="submit"]').click()

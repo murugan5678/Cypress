@@ -1,5 +1,5 @@
 import 'cypress-xpath';
-describe('Day7Automation', function(){
+describe('Custom commands', function(){
 
     // execute before all the code-- login the page
     before('login', ()=>{

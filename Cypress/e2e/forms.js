@@ -5,7 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // Return false to prevent the unhandled exception from failing the test
     return false;
   });
-describe('Custom commands', ()=>{
+describe('fixtures', ()=>{
     it('login', ()=>{
         cy.loginPage('murugan@auxosolutions.io','Muru!@12345678')
        cy.title().should('contain','Applications')

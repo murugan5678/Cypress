@@ -7,7 +7,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false;
   });
 //import cypress from "cypress"
-describe('Day5Automation', function(){
+describe('Assertion', function(){
 it('text box', function() {
     cy.visit('https://www.leafground.com/input.xhtml;jsessionid=node01wlh2x5gc5vzfqsc6xh49ibue696616.node0')
     cy.get("body > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > form:nth-child(1) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)").type('Automation')
